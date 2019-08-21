@@ -31,6 +31,7 @@ dependencies {
 
     //Add Library
     implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-database:16.0.1'
     implementation 'com.android.support:support-media-compat:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
 
