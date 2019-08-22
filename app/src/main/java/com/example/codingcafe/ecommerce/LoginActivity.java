@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(phone))
         {
-            Toast.makeText(this, "Please write phone number...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please write phone number.....", Toast.LENGTH_SHORT).show();
         }
 
         else if (TextUtils.isEmpty(password))
