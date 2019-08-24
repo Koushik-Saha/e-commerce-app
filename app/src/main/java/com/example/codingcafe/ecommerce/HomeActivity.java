@@ -188,8 +188,8 @@ public class HomeActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_settings)
         {
-//            Intent intent = new Intent(HomeActivity.this, SettinsActivity.class);
-//            startActivity(intent);
+            Intent intent = new Intent(HomeActivity.this, SettinsActivity.class);
+            startActivity(intent);
         }
         else if (id == R.id.nav_logout)
         {
