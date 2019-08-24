@@ -27,6 +27,7 @@ import android.widget.Toast;
 //import com.example.codingcafe.ecommerce.ViewHolder.ProductViewHolder;
 //import com.firebase.ui.database.FirebaseRecyclerAdapter;
 //import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 //import com.squareup.picasso.Picasso;
@@ -84,7 +85,7 @@ public class HomeActivity extends AppCompatActivity
         TextView userNameTextView = headerView.findViewById(R.id.user_profile_name);
         CircleImageView profileImageView = headerView.findViewById(R.id.user_profile_image);
 
-//        userNameTextView.setText(Prevalent.currentOnlineUser.getName());
+        userNameTextView.setText(Prevalent.currentOnlineUser.getName());
 //        Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.profile).into(profileImageView);
 
 
