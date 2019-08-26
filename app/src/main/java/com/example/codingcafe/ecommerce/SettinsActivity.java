@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,7 @@ public class SettinsActivity extends AppCompatActivity
     private CircleImageView profileImageView;
     private EditText fullNameEditText, userPhoneEditText, addressEditText;
     private TextView profileChangeTextBtn,  closeTextBtn, saveTextButton;
+    private Button securityQuestionBtn;
 
     private Uri imageUri;
     private String myUrl = "";
@@ -59,6 +61,7 @@ public class SettinsActivity extends AppCompatActivity
         profileChangeTextBtn = (TextView) findViewById(R.id.profile_image_change_btn);
         closeTextBtn = (TextView) findViewById(R.id.close_settings_btn);
         saveTextButton = (TextView) findViewById(R.id.update_account_settings_btn);
+        securityQuestionBtn = findViewById(R.id.security_questions_btn);
 
 
         userInfoDisplay(profileImageView, fullNameEditText, userPhoneEditText, addressEditText);
@@ -71,6 +74,19 @@ public class SettinsActivity extends AppCompatActivity
                 finish();
             }
         });
+
+
+        securityQuestionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(SettinsActivity.this, ResetPasswordActivity.class);
+                intent.putExtra("check", "settings");
+                startActivity(intent);
+            }
+        });
+
+
 
 
         saveTextButton.setOnClickListener(new View.OnClickListener() {

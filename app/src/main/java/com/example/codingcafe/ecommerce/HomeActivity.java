@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,9 +18,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
+import com.example.codingcafe.ecommerce.Admin.AdminMaintainProductsActivity;
 import com.example.codingcafe.ecommerce.Model.Products;
 import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
 import com.example.codingcafe.ecommerce.ViewHolder.ProductViewHolder;

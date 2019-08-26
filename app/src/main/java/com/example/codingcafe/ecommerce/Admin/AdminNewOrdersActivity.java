@@ -1,4 +1,4 @@
-package com.example.codingcafe.ecommerce;
+package com.example.codingcafe.ecommerce.Admin;
 
 import android.content.DialogInterface;
 import android.content.Intent;

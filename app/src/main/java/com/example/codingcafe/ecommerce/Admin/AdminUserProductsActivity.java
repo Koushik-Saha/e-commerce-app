@@ -1,4 +1,4 @@
-package com.example.codingcafe.ecommerce;
+package com.example.codingcafe.ecommerce.Admin;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
