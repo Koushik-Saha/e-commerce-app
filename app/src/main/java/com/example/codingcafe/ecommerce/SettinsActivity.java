@@ -75,7 +75,6 @@ public class SettinsActivity extends AppCompatActivity
             }
         });
 
-
         securityQuestionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -85,8 +84,6 @@ public class SettinsActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
-
-
 
 
         saveTextButton.setOnClickListener(new View.OnClickListener() {
@@ -243,7 +240,7 @@ public class SettinsActivity extends AppCompatActivity
         }
         else
         {
-            Toast.makeText(this, "Image is not selected.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "image is not selected.", Toast.LENGTH_SHORT).show();
         }
     }
 

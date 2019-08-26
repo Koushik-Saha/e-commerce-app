@@ -2,9 +2,9 @@ package com.example.codingcafe.ecommerce;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -24,8 +24,8 @@ import com.rey.material.widget.CheckBox;
 
 import io.paperdb.Paper;
 
-public class LoginActivity extends AppCompatActivity {
-
+public class LoginActivity extends AppCompatActivity
+{
     private EditText InputPhoneNumber, InputPassword;
     private Button LoginButton;
     private ProgressDialog loadingBar;
@@ -34,11 +34,12 @@ public class LoginActivity extends AppCompatActivity {
     private String parentDbName = "Users";
     private CheckBox chkBoxRememberMe;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
 
 
         LoginButton = (Button) findViewById(R.id.login_btn);
@@ -56,20 +57,9 @@ public class LoginActivity extends AppCompatActivity {
 
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                LoginUser();
-            }
-        });
-
-
-        AdminLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
+            public void onClick(View view)
             {
-                LoginButton.setText("Login Admin");
-                AdminLink.setVisibility(View.INVISIBLE);
-                NotAdminLink.setVisibility(View.VISIBLE);
-                parentDbName = "Admins";
+                LoginUser();
             }
         });
 
@@ -83,31 +73,40 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        AdminLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                LoginButton.setText("Login Admin");
+                AdminLink.setVisibility(View.INVISIBLE);
+                NotAdminLink.setVisibility(View.VISIBLE);
+                parentDbName = "Admins";
+            }
+        });
 
         NotAdminLink.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
+            public void onClick(View view)
             {
                 LoginButton.setText("Login");
                 AdminLink.setVisibility(View.VISIBLE);
                 NotAdminLink.setVisibility(View.INVISIBLE);
                 parentDbName = "Users";
-
             }
         });
     }
+
+
 
     private void LoginUser()
     {
         String phone = InputPhoneNumber.getText().toString();
         String password = InputPassword.getText().toString();
 
-
         if (TextUtils.isEmpty(phone))
         {
-            Toast.makeText(this, "Please write phone number.....", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please write your phone number...", Toast.LENGTH_SHORT).show();
         }
-
         else if (TextUtils.isEmpty(password))
         {
             Toast.makeText(this, "Please write your password...", Toast.LENGTH_SHORT).show();
@@ -121,15 +120,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
             AllowAccessToAccount(phone, password);
-
         }
-
     }
+
+
 
     private void AllowAccessToAccount(final String phone, final String password)
     {
-
-        if (chkBoxRememberMe.isChecked())
+        if(chkBoxRememberMe.isChecked())
         {
             Paper.book().write(Prevalent.UserPhoneKey, phone);
             Paper.book().write(Prevalent.UserPasswordKey, password);
@@ -138,6 +136,7 @@ public class LoginActivity extends AppCompatActivity {
 
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
+
 
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -153,7 +152,7 @@ public class LoginActivity extends AppCompatActivity {
                         {
                             if (parentDbName.equals("Admins"))
                             {
-                                Toast.makeText(LoginActivity.this, "Welcome Admin, You are Logged in Successfully...", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Welcome Admin, you are logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
                                 Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
@@ -161,10 +160,10 @@ public class LoginActivity extends AppCompatActivity {
                             }
                             else if (parentDbName.equals("Users"))
                             {
-                                Toast.makeText(LoginActivity.this, "Logged in Successfully...", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                                Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 Prevalent.currentOnlineUser = usersData;
                                 startActivity(intent);
                             }
@@ -176,12 +175,11 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 }
-                else 
+                else
                 {
-                    Toast.makeText(LoginActivity.this, "Account with this " + phone + " number do not exists", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Account with this " + phone + " number do not exists.", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                 }
-
             }
 
             @Override
@@ -189,6 +187,5 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
     }
 }
