@@ -79,6 +79,7 @@ public class HomeActivity extends AppCompatActivity
             {
                 if (!type.equals("Admin"))
                 {
+
                     Intent intent = new Intent(HomeActivity.this, CartActivity.class);
                     startActivity(intent);
                 }
@@ -217,6 +218,7 @@ public class HomeActivity extends AppCompatActivity
         {
             if (!type.equals("Admin"))
             {
+
                 Intent intent = new Intent(HomeActivity.this, CartActivity.class);
                 startActivity(intent);
             }
@@ -225,6 +227,7 @@ public class HomeActivity extends AppCompatActivity
         {
             if (!type.equals("Admin"))
             {
+
                 Intent intent = new Intent(HomeActivity.this, SearchProductsActivity.class);
                 startActivity(intent);
             }
@@ -237,6 +240,7 @@ public class HomeActivity extends AppCompatActivity
         {
             if (!type.equals("Admin"))
             {
+
                 Intent intent = new Intent(HomeActivity.this, SettinsActivity.class);
                 startActivity(intent);
             }
@@ -245,6 +249,7 @@ public class HomeActivity extends AppCompatActivity
         {
             if (!type.equals("Admin"))
             {
+
                 Paper.book().destroy();
 
                 Intent intent = new Intent(HomeActivity.this, MainActivity.class);
