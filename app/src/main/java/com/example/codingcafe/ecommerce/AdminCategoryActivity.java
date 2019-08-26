@@ -30,15 +30,15 @@ public class AdminCategoryActivity extends AppCompatActivity
 
 
 
-        maintainProductsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view)
-            {
-                Intent intent = new Intent(AdminCategoryActivity.this, HomeActivity.class);
-                intent.putExtra("Admin", "Admin");
-                startActivity(intent);
-            }
-        });
+//        maintainProductsBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view)
+//            {
+//                Intent intent = new Intent(AdminCategoryActivity.this, HomeActivity.class);
+//                intent.putExtra("Admin", "Admin");
+//                startActivity(intent);
+//            }
+//        });
 
 
         LogoutBtn.setOnClickListener(new View.OnClickListener() {
