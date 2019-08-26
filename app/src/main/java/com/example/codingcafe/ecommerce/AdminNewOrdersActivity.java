@@ -76,6 +76,38 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
                         });
 
 
+                        holder.itemView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view)
+                            {
+                                CharSequence options[] = new CharSequence[]
+                                        {
+                                                "Yes",
+                                                "No"
+                                        };
+
+                                AlertDialog.Builder builder = new AlertDialog.Builder(AdminNewOrdersActivity.this);
+                                builder.setTitle("Have you shipped this order products ?");
+
+                                builder.setItems(options, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i)
+                                    {
+                                        if (i == 0)
+                                        {
+                                            String uID = getRef(position).getKey();
+
+                                            RemoverOrder(uID);
+                                        }
+                                        else
+                                        {
+                                            finish();
+                                        }
+                                    }
+                                });
+                                builder.show();
+                            }
+                        });
 
                     }
 
@@ -113,6 +145,11 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
             userShippingAddress = itemView.findViewById(R.id.order_address_city);
             ShowOrdersBtn = itemView.findViewById(R.id.show_all_products_btn);
         }
+    }
+
+    private void RemoverOrder(String uID)
+    {
+        ordersRef.child(uID).removeValue();
     }
 
 }
