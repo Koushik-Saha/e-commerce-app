@@ -1,6 +1,4 @@
-package com.example.codingcafe.ecommerce;
-
-
+package com.example.codingcafe.ecommerce.Buyers;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
+import com.example.codingcafe.ecommerce.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -124,7 +123,6 @@ public class ResetPasswordActivity extends AppCompatActivity
                             {
                                 Toast.makeText(ResetPasswordActivity.this, "You have set security questions successfully", Toast.LENGTH_SHORT).show();
 
-
                                 Intent intent = new Intent(ResetPasswordActivity.this, HomeActivity.class);
                                 startActivity(intent);
                             }
@@ -228,13 +226,10 @@ public class ResetPasswordActivity extends AppCompatActivity
                                                                 Toast.makeText(ResetPasswordActivity.this, "Password changed successfully.", Toast.LENGTH_SHORT).show();
                                                                 Intent intent = new Intent(ResetPasswordActivity.this,LoginActivity.class);
                                                                 startActivity(intent);
-
                                                             }
-
                                                         }
                                                     });
                                         }
-
                                     }
                                 });
 
@@ -262,7 +257,8 @@ public class ResetPasswordActivity extends AppCompatActivity
                 }
 
                 @Override
-                public void onCancelled(DatabaseError databaseError) {
+                public void onCancelled(DatabaseError databaseError)
+                {
 
                 }
             });

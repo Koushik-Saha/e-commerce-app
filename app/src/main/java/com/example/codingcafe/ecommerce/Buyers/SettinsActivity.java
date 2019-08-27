@@ -1,4 +1,4 @@
-package com.example.codingcafe.ecommerce;
+package com.example.codingcafe.ecommerce.Buyers;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
+import com.example.codingcafe.ecommerce.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

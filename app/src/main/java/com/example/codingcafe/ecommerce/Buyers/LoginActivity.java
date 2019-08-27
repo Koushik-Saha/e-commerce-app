@@ -1,4 +1,4 @@
-package com.example.codingcafe.ecommerce;
+package com.example.codingcafe.ecommerce.Buyers;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.codingcafe.ecommerce.Admin.AdminCategoryActivity;
 import com.example.codingcafe.ecommerce.Model.Users;
 import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
+import com.example.codingcafe.ecommerce.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

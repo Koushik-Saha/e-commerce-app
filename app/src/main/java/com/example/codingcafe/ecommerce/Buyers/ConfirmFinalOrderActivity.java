@@ -1,4 +1,4 @@
-package com.example.codingcafe.ecommerce;
+package com.example.codingcafe.ecommerce.Buyers;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
+import com.example.codingcafe.ecommerce.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;

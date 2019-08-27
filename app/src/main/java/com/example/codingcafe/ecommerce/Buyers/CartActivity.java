@@ -1,4 +1,4 @@
-package com.example.codingcafe.ecommerce;
+package com.example.codingcafe.ecommerce.Buyers;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.codingcafe.ecommerce.Model.Cart;
 import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
+import com.example.codingcafe.ecommerce.R;
 import com.example.codingcafe.ecommerce.ViewHolder.CartViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;

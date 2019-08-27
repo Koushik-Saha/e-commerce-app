@@ -1,4 +1,4 @@
-package com.example.codingcafe.ecommerce;
+package com.example.codingcafe.ecommerce.Buyers;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.codingcafe.ecommerce.Model.Products;
+import com.example.codingcafe.ecommerce.R;
 import com.example.codingcafe.ecommerce.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;

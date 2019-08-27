@@ -1,4 +1,4 @@
-package com.example.codingcafe.ecommerce;
+package com.example.codingcafe.ecommerce.Buyers;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +23,7 @@ import android.widget.TextView;
 import com.example.codingcafe.ecommerce.Admin.AdminMaintainProductsActivity;
 import com.example.codingcafe.ecommerce.Model.Products;
 import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
+import com.example.codingcafe.ecommerce.R;
 import com.example.codingcafe.ecommerce.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
