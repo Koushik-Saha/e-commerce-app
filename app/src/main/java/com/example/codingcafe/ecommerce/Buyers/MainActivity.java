@@ -16,7 +16,10 @@ import android.widget.Toast;
 import com.example.codingcafe.ecommerce.Model.Users;
 import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
 import com.example.codingcafe.ecommerce.R;
+import com.example.codingcafe.ecommerce.Sellers.SellerHomeActivity;
 import com.example.codingcafe.ecommerce.Sellers.SellerRegistrationActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -88,8 +91,23 @@ public class MainActivity extends AppCompatActivity {
                 loadingBar.show();
             }
         }
+    }
 
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+
+        if (firebaseUser != null)
+        {
+            Intent intent = new Intent(MainActivity.this, SellerHomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        }
     }
 
     private void AllowAccess(final String phone, final String password)
