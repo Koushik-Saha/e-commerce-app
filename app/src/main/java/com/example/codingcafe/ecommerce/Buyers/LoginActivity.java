@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.codingcafe.ecommerce.Admin.AdminCategoryActivity;
+import com.example.codingcafe.ecommerce.Admin.SellerProductCategoryActivity;
 import com.example.codingcafe.ecommerce.Model.Users;
 import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
 import com.example.codingcafe.ecommerce.R;
@@ -156,7 +156,7 @@ public class LoginActivity extends AppCompatActivity
                                 Toast.makeText(LoginActivity.this, "Welcome Admin, you are logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                                Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, SellerProductCategoryActivity.class);
                                 startActivity(intent);
                             }
                             else if (parentDbName.equals("Users"))

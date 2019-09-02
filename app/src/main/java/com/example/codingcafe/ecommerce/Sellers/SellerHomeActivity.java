@@ -10,12 +10,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.codingcafe.ecommerce.Admin.SellerProductCategoryActivity;
 import com.example.codingcafe.ecommerce.Buyers.MainActivity;
 import com.example.codingcafe.ecommerce.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SellerHomeActivity extends AppCompatActivity {
-    private TextView mTextMessage;
+//    private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -23,13 +24,15 @@ public class SellerHomeActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
+
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+//                    mTextMessage.setText(R.string.title_home);
                     return true;
 
 
                 case R.id.navigation_add:
-                    mTextMessage.setText(R.string.title_dashboard);
+                    Intent intentCate = new Intent(SellerHomeActivity.this, SellerProductCategoryActivity.class);
+                    startActivity(intentCate);
                     return true;
 
 
@@ -38,9 +41,9 @@ public class SellerHomeActivity extends AppCompatActivity {
                     mAuth = FirebaseAuth.getInstance();
                     mAuth.signOut();
 
-                    Intent intent = new Intent(SellerHomeActivity.this, MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
+                    Intent intentMain = new Intent(SellerHomeActivity.this, MainActivity.class);
+                    intentMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intentMain);
                     finish();
                     return true;
             }
@@ -52,8 +55,8 @@ public class SellerHomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seller_home);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        mTextMessage = findViewById(R.id.message);
+        BottomNavigationView navView = findViewById(R.id.nav_view_2);
+//        mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
