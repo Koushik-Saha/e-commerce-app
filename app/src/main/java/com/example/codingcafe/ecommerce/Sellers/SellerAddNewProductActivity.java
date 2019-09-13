@@ -160,7 +160,9 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
 
         productRandomKey = saveCurrentDate + saveCurrentTime;
 
-        final StorageReference filePath = ProductImagesRef.child(ImageUri.getLastPathSegment() + productRandomKey + ".jpg");
+//        final StorageReference filePath = ProductImagesRef.child(ImageUri.getLastPathSegment() + productRandomKey + ".jpg");
+
+        final StorageReference filePath = ProductImagesRef.child(productRandomKey + ".jpg");
 
         final UploadTask uploadTask = filePath.putFile(ImageUri);
 
@@ -240,7 +242,7 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
                     {
                         if (task.isSuccessful())
                         {
-                            Intent intent = new Intent(SellerAddNewProductActivity.this, SellerProductCategoryActivity.class);
+                            Intent intent = new Intent(SellerAddNewProductActivity.this, SellerHomeActivity.class);
                             startActivity(intent);
 
                             loadingBar.dismiss();
