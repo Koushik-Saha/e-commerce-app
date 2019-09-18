@@ -144,7 +144,7 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
     {
 
         loadingBar.setTitle("Add New Product");
-        loadingBar.setMessage("Dear Admin, please wait while we are checking the credentials.");
+        loadingBar.setMessage("Dear Seller, please wait while we are checking the credentials.");
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.show();
 
